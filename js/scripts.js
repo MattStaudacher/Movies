@@ -28,9 +28,12 @@ $(document).ready(function() {
       var selectedTime = $("input:radio[name=times]:checked").val();
       var selectedMovie = $("select#movie-titles").val();
       var total= "";
-      console.log(selectedTime);
+    
 
-      var newMovie = new Movie (selectedMovie, selectedTime,inputAdultTickets,inputChildTickets,inputSeniorTickets)
+      var newMovie = new Movie (inputAdultTickets, inputChildTickets, inputSeniorTickets, selectedTime, selectedMovie, total)
+
+
+
 
       var adultPrice = 12;
       var childPrice = 7;
@@ -50,8 +53,8 @@ $(document).ready(function() {
      $("#show-movie h2").text(newMovie.title);
      $(".movie-name").text(newMovie.title);
      $(".movie-time").text(newMovie.time);
-     $(".number-of-children").text(newMovie.child);
-     $(".number-of-seniors").text(newMovie.adult);
+     $(".number-of-adults").text(newMovie.child);
+     $(".number-of-children").text(newMovie.adult);
       $(".number-of-seniors").text(newMovie.senior);
      $(".total").text(newTicket.total);
     //$(".city-name").text(newTicket.cityName);
@@ -60,12 +63,12 @@ $(document).ready(function() {
 
 
 
-   $("select#movie-titles").val("");
-   $(".times").val("");
    $("input#adult-tickets").val("");
-   //$("input#new-city-name").val("");
    $("input#child-tickets").val("");
    $("input#senior-tickets").val("");
-   $(".total").val("");
+   //$("input#new-city-name").val("");
+   $("input:radio[name=times]:checked").val("");
+   $("select#movie-titles").val("");
+
  });
  });
