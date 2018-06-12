@@ -14,7 +14,7 @@ Movie.prototype.total = function() {
 //userI
 
 $(document).ready(function() {
-  $("#new-movie").submit(function(event) {
+  $("form#form-movies").submit(function(event) {
       event.preventDefault();
 
       Movie.prototype.total = function() {
@@ -22,12 +22,13 @@ $(document).ready(function() {
         return adultPrice*inputAdultTickets+childPrice*inputChildTickets+seniorPrice*inputSeniorTickets;
       }
 
-      var inputAdultTickets = $("input#adult-tickets").val();
-      var inputChildTickets = $("input#child-tickets").val();
-      var inputSeniorTickets = $("input#senior-tickets").val();
+      var inputAdultTickets =parseInt($("input#adult-tickets").val());
+      var inputChildTickets = parseInt($("input#child-tickets").val());
+      var inputSeniorTickets = parseInt($("input#senior-tickets").val());
       var selectedTime = $("input:radio[name=times]:checked").val();
       var selectedMovie = $("select#movie-titles").val();
       var total= "";
+      console.log(selectedTime);
 
       var newMovie = new Movie (selectedMovie, selectedTime,inputAdultTickets,inputChildTickets,inputSeniorTickets)
 
@@ -42,23 +43,29 @@ $(document).ready(function() {
 
 
 
-      $("ul#contacts").append("<li><span class='contact'>" + newContact.fullName() + "</span></li>");
+      $("ul#movie-purchase").append(
+     "<li><span class='movieInfo'>" + newMovie.title + "</span></li>");
+   $(".movieInfo").last().click(function(){
+     $("#show-movie").show();
+     $("#show-movie h2").text(newMovie.title);
+     $(".movie-name").text(newMovie.title);
+     $(".movie-time").text(newMovie.time);
+     $(".number-of-children").text(newMovie.child);
+     $(".number-of-seniors").text(newMovie.adult);
+      $(".number-of-seniors").text(newMovie.senior);
+     $(".total").text(newTicket.total);
+    //$(".city-name").text(newTicket.cityName);
+   //  $(".state-name").text(newTicket.stateName);
+   });
 
-        $(".contact").last().click(function() {
-          $("#show-movie").show();
-          $("#show-movie h2").text(newContact.fullName());
-          $(".movie-name").text(newContact.firstName);
-          $(".movie-time").text(newContact.lastName);
-          $(".number-of-ticket").text("");
-          $(".movie-cost").text(newContact.lastName);
 
 
-      $(".new-address").each(function() {
-        var inputtedStreet = $(this).find("input.new-street").val();
-        var inputtedCity = $(this).find("input.new-city").val();
-        var inputtedState = $(this).find("input.new-state").val();
-        var newAddress = new Address(inputtedStreet, inputtedCity, inputtedState)
-        newContact.addresses.push(newAddress)
-      });
-
-});
+   $("select#movie-titles").val("");
+   $(".times").val("");
+   $("input#adult-tickets").val("");
+   //$("input#new-city-name").val("");
+   $("input#child-tickets").val("");
+   $("input#senior-tickets").val("");
+   $(".total").val("");
+ });
+ });

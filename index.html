@@ -64,12 +64,13 @@
       <li>The Equalizer 2</li>
     </ul>
   </div>
+</div>
       <div class="row">
         <div class="col-md-6">
           <h2><strong>Information</strong></h2>
           <form id="form-movies">
             <div class="form-group">
-              <label for="movie-choices"><strong>Movie choices:</strong></label>
+              <label for="movie-titles"><strong>Movie choices:</strong></label>
               <select class="form-control" id="movie-titles">
                   <option value="oceans-8">Oceans 8</option>
                   <option value="avengers">Avengers</option>
@@ -86,19 +87,19 @@
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="times" value="mid">
+              <input type="radio" name="times" value="mid" checked>
                 4:00PM
             </label>
           </div>
             <div class="radio">
               <label>
-                <input type="radio" name="times" value="late">
+                <input type="radio" name="times" value="late" checked>
                 7:30PM
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="times" value="verylate">
+                <input type="radio" name="times" value="verylate" checked>
                 11:00PM
               </label>
             </div>
@@ -108,15 +109,15 @@
               <div class="new-address">
                 <div class="form-group">
                   <label for="adult-tickets">Number of Adult tickets:</label>
-                  <input type="number" class="form-control new-street" id="adult-tickets">
+                  <input type="text" class="form-control" id="adult-tickets">
                 </div>
                 <div class="form-group">
                   <label for="child-tickets">Number of Child tickets:</label>
-                  <input type="number" class="form-control new-city" id="child-tickets">
+                  <input type="text" class="form-control" id="child-tickets">
                 </div>
                 <div class="form-group">
                   <label for="senior-tickets">Number of Senior tickets:</label>
-                  <input type="number" class="form-control new-state" id="senior-tickets">
+                  <input type="text" class="form-control" id="senior-tickets">
                 </div>
               </div>
             </div>
@@ -129,26 +130,25 @@
 
         </div>
 
-        <div class="col-md-6">
+
           <h2>Confirm your order:</h2>
           <ul id="movie-purchase">
 
           </ul>
+          <div class="col-md-6">
           <div id="show-movie">
             <h2></h2>
-            <p>Movie: <span class="movie-name"></span></p>
-            <p>Time: <span class="movie-time"></span></p>
-            <p># of Adults: <span class="number-of-tickets"></span></p>
-            <p># of Children: <span class="number-of-tickets"></span></p>
-            <p># of Seniors: <span class="number-of-tickets"></span></p>
-            <p>Cost:<span class="movie-cost"></span></p>
-            <ul id="showtime">
-
-            </ul>
+                <p>Movie: <span class="movie-name"></span></p>
+                <p>Time: <span class="movie-time"></span></p>
+                <p># of Adults: <span class="number-of-adults"></span></p>
+                <p># of Children: <span class="number-of-children"></span></p>
+                <p># of Seniors: <span class="number-of-seniors"></span></p>
+                <p>Cost:<span class="movie-cost"></span></p>
+              </ul>
           </div>
         </div>
 
-      </div>
-    </div>
+
+</div>
   </body>
 </html>
