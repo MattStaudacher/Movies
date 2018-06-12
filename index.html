@@ -104,24 +104,24 @@
             </div>
         </div>
 
-            <div id="new-addresses">
+            <div id="new-movie">
               <div class="new-address">
                 <div class="form-group">
-                  <label for="new-street">Number of Adult tickets:</label>
-                  <input type="number" class="form-control new-street">
+                  <label for="adult-tickets">Number of Adult tickets:</label>
+                  <input type="number" class="form-control new-street" id="adult-tickets">
                 </div>
                 <div class="form-group">
-                  <label for="new-city">Number of Child tickets:</label>
-                  <input type="number" class="form-control new-city">
+                  <label for="child-tickets">Number of Child tickets:</label>
+                  <input type="number" class="form-control new-city" id="child-tickets">
                 </div>
                 <div class="form-group">
-                  <label for="new-state">Number of Senior tickets:</label>
-                  <input type="number" class="form-control new-state">
+                  <label for="senior-tickets">Number of Senior tickets:</label>
+                  <input type="number" class="form-control new-state" id="senior-tickets">
                 </div>
               </div>
             </div>
 
-            <span class="btn btn-primary" id="add-address">Another address</span>
+          
 
             <button type="submit" class="btn">Proceed to checkout!</button>
           </form>
@@ -131,15 +131,16 @@
 
         <div class="col-md-6">
           <h2>Total Cost:</h2>
-          <ul id="contacts">
+          <ul id="">
 
           </ul>
-          <div id="show-contact">
+          <div id="show-movie">
             <h2></h2>
-            <p>First name: <span class="first-name"></span></p>
-            <p>Last name: <span class="last-name"></span></p>
-            <p>Addresses:</p>
-            <ul id="addresses">
+            <p>Movie: <span class="movie-name"></span></p>
+            <p>Time: <span class="movie-time"></span></p>
+            <p>Tickets: <span class="number-of-tickets"></span></p>
+            <p>Cost:<span class="movie-cost"></span></p>
+            <ul id="showtime">
 
             </ul>
           </div>
